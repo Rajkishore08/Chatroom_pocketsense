@@ -1,18 +1,12 @@
 {
-  "name": "chat_basic3",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "express": "^4.20.0",
-    "http": "^0.0.1-security",
-    "socket.io": "^4.7.5"
-  }
+    "name": "pocket-sense",
+    "version": "1.0.0",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2",
+        "socket.io": "^4.4.1"
+    }
 }
