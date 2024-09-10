@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Sense Chat Room</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login" class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Welcome to Pocket Sense</h1>
+                <p class="card-text">Financial freedom starts with knowledge</p>
+                <h2 class="card-subtitle mb-2 text-muted">Join Chat Room</h2>
+                <input type="text" id="username" class="form-control" placeholder="Enter username">
+                <button onclick="login()" class="btn btn-primary mt-3">Join Chat</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="chat" style="display: none;">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Chat Rooms</h2>
+                            <div id="rooms">
+                                <button onclick="joinRoom('general')" class="btn btn-light w-100 mb-2">General</button>
+                                <button onclick="joinRoom('investing')" class="btn btn-light w-100 mb-2">Investing</button>
+                                <button onclick="joinRoom('budgeting')" class="btn btn-light w-100 mb-2">Budgeting</button>
+                                <button onclick="joinRoom('savings')" class="btn btn-light w-100 mb-2">Savings</button>
+                            </div>
+                            <h2 class="card-subtitle mb-2 text-muted">Online Users</h2>
+                            <div id="online-users"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 id="room-header" class="card-title"></h2>
+                            <div id="messages" class="card-text"></div>
+                            <div id="typing" class="card-text text-muted"></div>
+                            <div id="input-area" class="input-group mt-3">
+                                <input type="text" id="m" class="form-control" autocomplete="off" placeholder="Type a message...">
+                                <div class="input-group-append">
+                                    <button onclick="sendMessage()" class="btn btn-primary">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Room Users</h2>
+                            <div id="room-users"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
